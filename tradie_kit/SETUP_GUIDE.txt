@@ -1,0 +1,97 @@
+# YOUR TRADIE OPERATIONS KIT - MELBOURNE
+
+## Setup This Week
+
+### 1. Payment Link (Stripe)
+Create a Stripe Payment Link:
+- Go to stripe.com → Payment Links
+- Product: "Tradie Operations Kit"
+- Price: $197
+- Copy the link
+
+### 2. Your Templates Are Ready
+Files in /root/.openclaw/workspace/tradie_kit/:
+- QUOTE_TEMPLATE.csv
+- JOB_SHEET.csv  
+- INVOICE_TEMPLATE.csv
+
+Import these into Google Sheets to use.
+
+### 3. Customise
+Add your:
+- Business Name: _______________
+- ABN: _______________
+- Phone: _______________
+- Email: _______________
+- Bank details for payments
+
+---
+
+## Your Melbourne Lead Strategy
+
+### Where to Find Tradies (Melbourne)
+
+**Facebook Groups - Join & Post:**
+1. Tradie Talk Melbourne (or Tradie Talk Australia)
+2. Sparkies Australia
+3. Aussie Plumbers 
+4. Melbourne Carpenters
+5. [Your suburb] Tradie Network
+
+**Google Maps (Call These):**
+Search "plumber melbourne" - call ones WITHOUT websites
+
+**Local Approach:**
+- Bunnings Richmond, Moorabbin, Knoxfield (tradie cage)
+- Melbourne building sites
+- Local hardware stores
+
+---
+
+## DAILY ACTION (Next 7 Days)
+
+| Day | Action | Target |
+|-----|--------|--------|
+| 1 | Set up Stripe payment link | Done |
+| 2 | Join 3 tradie FB groups | 3 groups |
+| 3 | Post intro in each group | 1 post/group |
+| 4 | Send 10 SMS to tradies | 10 sent |
+| 5-6 | Follow up + close sales | 2-3 sales |
+| 7 | Refine + repeat | 5 sales |
+
+---
+
+## FIRST WEEK MATH
+
+$197 × 26 sales = $5,122
+$197 × 51 sales = $10,047
+
+Sell 2/day = $10k in 26 days
+Sell 4/day = $10k in 13 days
+
+---
+
+## Your Stripe Payment Link Setup
+
+1. **Go to:** https://dashboard.stripe.com/payment-links
+2. **Create:** New Payment Link
+3. **Product name:** Tradie Operations Kit
+4. **Price:** $197.00 AUD
+5. **Currency:** AUD (Australian Dollar)
+6. **After payment:** Enter your Google Drive folder link where templates are stored
+
+The payment link will look like:
+`https://buy.stripe.com/xxxxxxxx`
+
+Send this link to customers after they've said yes!
+
+---
+
+## Templates Location
+
+/home/tradie_kit/
+├── QUOTE_TEMPLATE.csv
+├── JOB_SHEET.csv
+└── INVOICE_TEMPLATE.csv
+
+Import into Google Sheets → File → Import → Upload

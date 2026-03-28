@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tradie Ops - Done-For-You Admin System</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0f0f0f; color: #fff; line-height: 1.6;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 3px solid #f5a623;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #fff, #f5a623);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p { font-size: 1.3rem; color: #aaa; max-width: 600px; margin: 0 auto 30px; }
+        
+        .pain-section {
+            background: #1a1a1a;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .pain-section h2 { color: #f5a623; font-size: 2rem; margin-bottom: 30px; }
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .pain-card {
+            background: #252525;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid #f5a623;
+        }
+        .pain-card h3 { color: #f5a623; margin-bottom: 10px; }
+        
+        .offer-section { padding: 80px 20px; }
+        .offer-section h2 { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .pricing-card {
+            background: #1a1a1a;
+            border-radius: 16px;
+            padding: 40px;
+            border: 2px solid #333;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .pricing-card:hover { transform: translateY(-10px); }
+        .pricing-card.featured { border-color: #f5a623; position: relative; }
+        .pricing-card.featured::before {
+            content: "MOST POPULAR";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #f5a623;
+            color: #000;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+        .pricing-card h3 { font-size: 1.5rem; margin-bottom: 10px; }
+        .price { font-size: 3rem; font-weight: bold; color: #f5a623; margin: 20px 0; }
+        .price span { font-size: 1rem; color: #666; }
+        
+        .features-list { list-style: none; margin: 30px 0; }
+        .features-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #333;
+            display: flex;
+            align-items: center;
+        }
+        .features-list li::before {
+            content: "✓";
+            color: #f5a623;
+            margin-right: 12px;
+            font-weight: bold;
+        }
+        
+        .cta-btn {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            background: #f5a623;
+            color: #000;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            transition: background 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+        .cta-btn:hover { background: #e69500; }
+        
+        .guarantee {
+            background: #1a3d1a;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 40px auto;
+            max-width: 600px;
+            border: 1px solid #2d5a2d;
+        }
+        .guarantee h3 { color: #4ade80; margin-bottom: 10px; }
+        
+        .footer {
+            background: #0a0a0a;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .pricing-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>🛠️ Tradie Ops System</h1>
+        <p>We Build It First. You Pay After. <br>Save 10 Hours/Week Without Hiring Anyone.</p>
+        <p style="color: #f5a623; font-weight: bold;">For Aussie Tradies Who Want Their Time Back</p>
+    </section>
+
+    <!-- Pain Section -->
+    <section class="pain-section">
+        <h2>Sound Familiar?</h2>
+        <div class="pain-grid">
+            <div class="pain-card">
+                <h3>💸 Losing Jobs</h3>
+                <p>Can't track quotes? Clients go elsewhere. Simple as that.</p>
+            </div>
+            <div class="pain-card">
+                <h3>📝 Admin拖垮你</h3>
+                <p>Spending 2+ hours/day on quotes and invoices. That's your life now.</p>
+            </div>
+            <div class="pain-card">
+                <h3>💰 Money Gone</h3>
+                <p>Paying $50-150/month for software you only use 20% of.</p>
+            </div>
+            <div class="pain-card">
+                <h3>😴 No Time Off</h3>
+                <p>Trading time for money. Can't scale. Can't stop.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="offer-section">
+        <h2>Choose Your System</h2>
+        
+        <div class="pricing-grid">
+            
+            <!-- Tier 1: Foundations -->
+            <div class="pricing-card">
+                <h3>🔧 Tradie Foundations</h3>
+                <p>Essential templates to get started</p>
+                <div class="price">$497<span>AUD</span></div>
+                
+                <ul class="features-list">
+                    <li>Custom Quote Template</li>
+                    <li>Custom Job Sheet</li>
+                    <li>Custom Invoice (ATO-compliant)</li>
+                    <li>Your logo & colours</li>
+                    <li>48hr delivery</li>
+                    <li>7-day support</li>
+                </ul>
+                
+                <a href="https://buy.stripe.com/YOUR_FOUNDATIONS_LINK" class="cta-btn">Get Started</a>
+            </div>
+            
+            <!-- Tier 2: Operations (Featured) -->
+            <div class="pricing-card featured">
+                <h3>⚡ Tradie Operations</h3>
+                <p>Complete system. We build it all.</p>
+                <div class="price">$1,997<span>AUD</span></div>
+                
+                <ul class="features-list">
+                    <li><strong>Everything in Foundations</strong></li>
+                    <li>Materials Tracker</li>
+                    <li>Weekly Schedule Template</li>
+                    <li>Job Follow-up System</li>
+                    <li>Done-for-you setup (we build it)</li>
+                    <li>1hr strategy call</li>
+                    <li>30-day priority support</li>
+                </ul>
+                
+                <a href="https://buy.stripe.com/YOUR_OPERATIONS_LINK" class="cta-btn">Get Started</a>
+            </div>
+            
+            <!-- Tier 3: Done-For-You -->
+            <div class="pricing-card">
+                <h3>👑 Tradie Done-For-You</h3>
+                <p>We run it for you. 12 months.</p>
+                <div class="price">$2,997<span>+ $197/mo</span></div>
+                
+                <ul class="features-list">
+                    <li><strong>Everything in Operations</strong></li>
+                    <li>12 months of updates</li>
+                    <li>Monthly 30-min consults</li>
+                    <li>Priority support (anytime)</li>
+                    <li>We manage the whole system</li>
+                    <li>First right of refusal on new features</li>
+                </ul>
+                
+                <a href="https://buy.stripe.com/YOUR_DONEFORYOU_LINK" class="cta-btn">Get Started</a>
+            </div>
+            
+        </div>
+        
+        <!-- Guarantee -->
+        <div class="guarantee">
+            <h3>🛡️ Our Guarantee</h3>
+            <p>We build FIRST. You pay AFTER.<br><br>
+            Doesn't save you 5 hours in week 1?<br>
+            <strong>Full refund. No questions asked.</strong></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Tradie Ops System © 2026</p>
+        <p style="color: #666; font-size: 0.9rem; margin-top: 10px;">
+            For Aussie Tradies | Melbourne Based
+        </p>
+    </footer>
+
+</body>
+</html>
