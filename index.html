@@ -3,222 +3,326 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tradie Ops - The System</title>
+    <title>The Tradie Exit System</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #0f0f0f; color: #fff; line-height: 1.6;
+            background: #000; color: #fff; line-height: 1.6;
         }
         
         .hero {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            padding: 100px 20px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            padding: 120px 20px;
             text-align: center;
+            border-bottom: 2px solid #00ff88;
         }
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
+            font-weight: 800;
             margin-bottom: 20px;
+            letter-spacing: -2px;
         }
         .hero h1 span {
             color: #00ff88;
+            display: block;
         }
         .hero p { 
-            font-size: 1.5rem; 
-            color: #888; 
-            max-width: 700px; 
-            margin: 0 auto 40px; 
-        }
-        .hero .sub {
-            font-size: 1.1rem;
-            color: #666;
-            margin-top: 30px;
+            font-size: 1.8rem; 
+            color: #666; 
+            max-width: 800px; 
+            margin: 0 auto 30px; 
         }
         
-        .problem-section {
-            background: #1a1a1a;
-            padding: 80px 20px;
+        .tagline {
+            background: #00ff88;
+            color: #000;
+            display: inline-block;
+            padding: 8px 20px;
+            font-weight: bold;
+            border-radius: 30px;
+            margin-bottom: 30px;
         }
-        .problem-section h2 {
+        
+        .pain-section {
+            background: #0d0d0d;
+            padding: 100px 20px;
+        }
+        .pain-section h2 {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            color: #00ff88;
+            font-size: 3rem;
+            margin-bottom: 60px;
         }
-        .problem-grid {
+        .pain-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            max-width: 1000px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
             margin: 0 auto;
         }
-        .problem-card {
-            background: #1e1e1e;
-            padding: 35px;
-            border-radius: 12px;
-            border: 1px solid #333;
+        .pain-card {
+            background: #151515;
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid #222;
         }
-        .problem-card h3 {
-            color: #ff6b6b;
-            font-size: 1.2rem;
+        .pain-card .emoji {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .pain-card h3 {
+            color: #fff;
+            font-size: 1.4rem;
             margin-bottom: 15px;
         }
-        .problem-card p { color: #aaa; }
+        .pain-card p { color: #888; font-size: 1.1rem; }
         
-        .solution-section {
+        .dream-section {
+            background: linear-gradient(180deg, #0d0d0d 0%, #00ff88 0%);
             padding: 100px 20px;
-            background: linear-gradient(180deg, #0f0f0f 0%, #0a0a0a 100%);
-        }
-        .solution-section h2 {
             text-align: center;
-            font-size: 2.5rem;
+        }
+        .dream-section h2 {
+            font-size: 3rem;
+            margin-bottom: 40px;
+        }
+        .dream-section h2 span {
+            color: #00ff88;
+            background: #1a1a1a;
+            padding: 10px 30px;
+            border-radius: 10px;
+        }
+        
+        .offer-section {
+            padding: 120px 20px;
+            background: #0a0a0a;
+        }
+        .offer-section h2 {
+            text-align: center;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        .offer-section .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.3rem;
             margin-bottom: 60px;
         }
         
         .main-offer {
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
-            background: #151515;
-            border-radius: 20px;
-            padding: 50px;
-            border: 2px solid #00ff88;
+            background: linear-gradient(145deg, #111 0%, #0a0a0a 100%);
+            border-radius: 24px;
+            padding: 60px;
+            border: 3px solid #00ff88;
+            position: relative;
         }
+        .main-offer::before {
+            content: "THE ONLY ONE";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #00ff88;
+            color: #000;
+            padding: 8px 25px;
+            border-radius: 20px;
+            font-weight: 900;
+            font-size: 0.9rem;
+        }
+        
         .main-offer h3 {
-            font-size: 1.8rem;
+            font-size: 2.5rem;
             margin-bottom: 10px;
         }
-        .main-offer .price {
-            font-size: 4rem;
-            font-weight: bold;
+        .main-offer .tag {
             color: #00ff88;
-            margin: 20px 0;
-        }
-        .main-offer .price span {
             font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .price-box {
+            background: #151515;
+            border-radius: 16px;
+            padding: 40px;
+            margin: 40px 0;
+            border: 2px solid #00ff88;
+        }
+        .price-box .price {
+            font-size: 5rem;
+            font-weight: 900;
+            color: #00ff88;
+            line-height: 1;
+        }
+        .price-box .price span {
+            font-size: 1.5rem;
             color: #666;
         }
-        .main-offer .perks {
-            list-style: none;
-            margin: 30px 0;
+        .price-box .note {
+            color: #666;
+            margin-top: 10px;
+            font-size: 1rem;
         }
-        .main-offer .perks li {
-            padding: 15px 0;
+        
+        .value-stack {
+            text-align: left;
+            margin: 40px 0;
+        }
+        .value-stack h4 {
+            color: #fff;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
             border-bottom: 1px solid #333;
-            font-size: 1.1rem;
+            padding-bottom: 10px;
         }
-        .main-offer .perks li::before {
-            content: "✓";
+        .value-stack ul {
+            list-style: none;
+        }
+        .value-stack ul li {
+            padding: 15px 0;
+            border-bottom: 1px solid #222;
+            display: flex;
+            justify-content: space-between;
+        }
+        .value-stack ul li .what {
+            color: #fff;
+        }
+        .value-stack ul li .val {
             color: #00ff88;
-            margin-right: 15px;
+            font-weight: bold;
         }
         
         .cta-btn {
             display: block;
             width: 100%;
-            padding: 20px;
+            padding: 25px;
             background: #00ff88;
             color: #000;
             text-decoration: none;
             text-align: center;
-            font-weight: bold;
-            font-size: 1.3rem;
-            border-radius: 10px;
+            font-weight: 900;
+            font-size: 1.5rem;
+            border-radius: 12px;
             cursor: pointer;
             border: none;
+            transition: transform 0.2s;
         }
-        .cta-btn:hover { background: #00dd77; }
+        .cta-btn:hover { transform: scale(1.02); }
         
         .guarantee {
-            background: #1a2a1a;
-            padding: 25px;
-            border-radius: 10px;
-            text-align: center;
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 12px;
             margin: 30px 0;
-            border: 1px solid #2a4a2a;
+            border: 1px solid #333;
         }
-        .guarantee p { color: #00ff88; }
+        .guarantee h4 {
+            color: #00ff88;
+            margin-bottom: 10px;
+        }
+        .guarantee p { color: #666; }
         
         .footer {
-            padding: 40px 20px;
+            padding: 60px 20px;
             text-align: center;
             border-top: 1px solid #222;
             color: #444;
         }
         
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
+            .hero h1 { font-size: 2.5rem; }
             .main-offer { padding: 30px; }
-            .main-offer .price { font-size: 3rem; }
+            .price-box .price { font-size: 3.5rem; }
         }
     </style>
 </head>
 <body>
 
     <section class="hero">
-        <h1>One System. <span>One Price.</span></h1>
-        <p>We build it. You use it. We keep improving it.</p>
-        <p class="sub">For Aussie Tradies Who Want Their Time Back</p>
+        <span class="tagline">For Tradie Business Owners</span>
+        <h1>The Tradie Exit<span>System</span></h1>
+        <p>Stop trading hours for dollars. Build a business that runs without you. Sell it for 3-5x revenue.</p>
     </section>
 
-    <section class="problem-section">
-        <h2>The Problem</h2>
-        <div class="problem-grid">
-            <div class="problem-card">
-                <h3>Time for Money</h3>
-                <p>You trade hours for dollars. Can't scale. Can't take time off.</p>
+    <section class="pain-section">
+        <h2>Sound Familiar?</h2>
+        <div class="pain-grid">
+            <div class="pain-card">
+                <div class="emoji">⏰</div>
+                <h3>No Time Freedom</h3>
+                <p>You take time off = you lose income. Can't vacation. Can't be sick. The business IS you.</p>
             </div>
-            <div class="problem-card">
-                <h3>Admin Sucks</h3>
-                <p>2+ hours daily on quotes and invoices. That's not why you became a tradie.</p>
+            <div class="pain-card">
+                <div class="emoji">💸</div>
+                <h3>Can't Sell It</h3>
+                <p>When you want out, there's nothing to sell. No system, no team, no value. Just tools and a ute.</p>
             </div>
-            <div class="problem-card">
-                <h3>Software is Overkill</h3>
-                <p>$50-150/mo for features you never use. You just need the basics.</p>
+            <div class="pain-card">
+                <div class="emoji">📉</div>
+                <h3>Worth Nothing</h3>
+                <p>Your business has no resale value. Buyers pay 3-5x EBITDA. You have zero.</p>
             </div>
-            <div class="problem-card">
-                <h3>Can't Find Good Help</h3>
-                <p>Can't afford admin staff. Can't do it all yourself forever.</p>
+            <div class="pain-card">
+                <div class="emoji">😴</div>
+                <h3>Trapped Forever</h3>
+                <p>You can't exit. You can't retire. You'll be on the tools until you physically can't.</p>
             </div>
         </div>
     </section>
 
-    <section class="solution-section">
-        <h2>The System</h2>
+    <section class="dream-section">
+        <h2>The Dream Outcome <span>worth $200,000+</span></h2>
+        <p style="font-size: 1.5rem; color: #888; max-width: 600px; margin: 0 auto;">
+            A business that runs without you. Worth 3-5x annual profit. Sell for $300k-$1M+.
+        </p>
+    </section>
+
+    <section class="offer-section">
+        <h2>The Only System</h2>
+        <p class="subtitle">There's nothing to compare to. This is a category of one.</p>
         
         <div class="main-offer">
-            <h3>Tradie Ops System</h3>
-            <p>The ONE system that handles your whole admin.</p>
+            <h3>Tradie Exit System</h3>
+            <p class="tag">12-Month Mastermind & System Build</p>
             
-            <div class="price">$97<span>/month</span></div>
+            <div class="price-box">
+                <div class="price">$497<span>/month</span></div>
+                <p class="note">Less than 3 days' labour per month</p>
+            </div>
             
-            <ul class="perks">
-                <li>Custom Quote System</li>
-                <li>Job Sheet & Tracking</li>
-                <li>Invoicing (ATO-ready)</li>
-                <li>Materials Tracker</li>
-                <li>Client Database</li>
-                <li>We build it FOR YOU</li>
-                <li>We maintain it for YOU</li>
-                <li>Unlimited updates</li>
-                <li>Priority support</li>
-            </ul>
+            <div class="value-stack">
+                <h4>The Investment (What You'd Pay Separately)</h4>
+                <ul>
+                    <li><span class="what">Business Valuation System</span><span class="val">$2,500</span></li>
+                    <li><span class="what">Operations Playbook Build</span><span class="val">$5,000</span></li>
+                    <li><span class="what">Team Building System</span><span class="val">$3,000</span></li>
+                    <li><span class="what">Financial Transparency Setup</span><span class="val">$2,000</span></li>
+                    <li><span class="what">Exit Readiness Framework</span><span class="val">$3,500</span></li>
+                    <li><span class="what">Monthly Group Coaching (12x)</span><span class="val">$6,000</span></li>
+                    <li><span class="what">1-on-1 Strategy Calls (6x)</span><span class="val">$3,000</span></li>
+                    <li><span class="what">Investor-Ready Documentation</span><span class="val">$2,500</span></li>
+                </ul>
+                <ul>
+                    <li style="border:none;"><span class="what" style="color:#00ff88;">TOTAL VALUE</span><span class="val" style="color:#00ff88;">$27,500</span></li>
+                </ul>
+            </div>
             
-            <a href="#" class="cta-btn" id="stripeBtn">Start Subscription</a>
+            <a href="#" class="cta-btn" id="stripeBtn">START THE SYSTEM →</a>
             
             <div class="guarantee">
-                <p><strong>Pay First, Then We Build</strong></p>
-                <p style="color:#666; margin-top:10px;">No deposits, no prototypes. You pay, we build. If it's not what you need within 30 days, full refund.</p>
+                <h4>🛡️ The Certainty Guarantee</h4>
+                <p>If you don't have a clearer path to a sellable business within 90 days, I'll refund every cent. No questions. No hard feelings.</p>
             </div>
         </div>
     </section>
 
     <footer class="footer">
-        <p>Tradie Ops System</p>
-        <p style="margin-top:10px;">Melbourne, Australia</p>
+        <p>The Tradie Exit System</p>
+        <p style="margin-top:10px;">Built in Melbourne for Australian Tradie Business Owners</p>
     </footer>
 
     <script>
-        // Add your Stripe subscription link here
         const stripeLink = "YOUR_STRIPE_SUBSCRIPTION_LINK";
         document.getElementById('stripeBtn').href = stripeLink;
     </script>
