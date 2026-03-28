@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tradie Ops - Done-For-You Admin System</title>
+    <title>Tradie Ops - The System</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
@@ -13,243 +13,215 @@
         
         .hero {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            padding: 80px 20px;
+            padding: 100px 20px;
             text-align: center;
-            border-bottom: 3px solid #f5a623;
         }
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 20px;
-            background: linear-gradient(90deg, #fff, #f5a623);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
-        .hero p { font-size: 1.3rem; color: #aaa; max-width: 600px; margin: 0 auto 30px; }
+        .hero h1 span {
+            color: #00ff88;
+        }
+        .hero p { 
+            font-size: 1.5rem; 
+            color: #888; 
+            max-width: 700px; 
+            margin: 0 auto 40px; 
+        }
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #666;
+            margin-top: 30px;
+        }
         
-        .pain-section {
+        .problem-section {
             background: #1a1a1a;
-            padding: 60px 20px;
+            padding: 80px 20px;
+        }
+        .problem-section h2 {
             text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #00ff88;
         }
-        .pain-section h2 { color: #f5a623; font-size: 2rem; margin-bottom: 30px; }
-        .pain-grid {
+        .problem-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            max-width: 900px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
             margin: 0 auto;
         }
-        .pain-card {
-            background: #252525;
-            padding: 30px;
+        .problem-card {
+            background: #1e1e1e;
+            padding: 35px;
             border-radius: 12px;
-            border-left: 4px solid #f5a623;
+            border: 1px solid #333;
         }
-        .pain-card h3 { color: #f5a623; margin-bottom: 10px; }
+        .problem-card h3 {
+            color: #ff6b6b;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        .problem-card p { color: #aaa; }
         
-        .offer-section { padding: 80px 20px; }
-        .offer-section h2 { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+        .solution-section {
+            padding: 100px 20px;
+            background: linear-gradient(180deg, #0f0f0f 0%, #0a0a0a 100%);
+        }
+        .solution-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+        }
         
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1100px;
+        .main-offer {
+            max-width: 600px;
             margin: 0 auto;
-        }
-        
-        .pricing-card {
-            background: #1a1a1a;
-            border-radius: 16px;
-            padding: 40px;
-            border: 2px solid #333;
-            transition: transform 0.3s, border-color 0.3s;
-        }
-        .pricing-card:hover { transform: translateY(-10px); }
-        .pricing-card.featured { border-color: #f5a623; position: relative; }
-        .pricing-card.featured::before {
-            content: "MOST POPULAR";
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #f5a623;
-            color: #000;
-            padding: 5px 20px;
+            background: #151515;
             border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.8rem;
+            padding: 50px;
+            border: 2px solid #00ff88;
         }
-        .pricing-card h3 { font-size: 1.5rem; margin-bottom: 10px; }
-        .price { font-size: 3rem; font-weight: bold; color: #f5a623; margin: 20px 0; }
-        .price span { font-size: 1rem; color: #666; }
-        
-        .features-list { list-style: none; margin: 30px 0; }
-        .features-list li {
-            padding: 12px 0;
+        .main-offer h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        .main-offer .price {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #00ff88;
+            margin: 20px 0;
+        }
+        .main-offer .price span {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        .main-offer .perks {
+            list-style: none;
+            margin: 30px 0;
+        }
+        .main-offer .perks li {
+            padding: 15px 0;
             border-bottom: 1px solid #333;
-            display: flex;
-            align-items: center;
+            font-size: 1.1rem;
         }
-        .features-list li::before {
+        .main-offer .perks li::before {
             content: "✓";
-            color: #f5a623;
-            margin-right: 12px;
-            font-weight: bold;
+            color: #00ff88;
+            margin-right: 15px;
         }
         
         .cta-btn {
             display: block;
             width: 100%;
-            padding: 18px;
-            background: #f5a623;
+            padding: 20px;
+            background: #00ff88;
             color: #000;
             text-decoration: none;
             text-align: center;
             font-weight: bold;
-            font-size: 1.1rem;
-            border-radius: 8px;
-            transition: background 0.3s;
+            font-size: 1.3rem;
+            border-radius: 10px;
             cursor: pointer;
             border: none;
         }
-        .cta-btn:hover { background: #e69500; }
+        .cta-btn:hover { background: #00dd77; }
         
         .guarantee {
-            background: #1a3d1a;
-            padding: 30px;
-            border-radius: 12px;
+            background: #1a2a1a;
+            padding: 25px;
+            border-radius: 10px;
             text-align: center;
-            margin: 40px auto;
-            max-width: 600px;
-            border: 1px solid #2d5a2d;
+            margin: 30px 0;
+            border: 1px solid #2a4a2a;
         }
-        .guarantee h3 { color: #4ade80; margin-bottom: 10px; }
+        .guarantee p { color: #00ff88; }
         
         .footer {
-            background: #0a0a0a;
             padding: 40px 20px;
             text-align: center;
-            border-top: 1px solid #333;
+            border-top: 1px solid #222;
+            color: #444;
         }
         
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .pricing-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.2rem; }
+            .main-offer { padding: 30px; }
+            .main-offer .price { font-size: 3rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Hero Section -->
     <section class="hero">
-        <h1>🛠️ Tradie Ops System</h1>
-        <p>We Build It First. You Pay After. <br>Save 10 Hours/Week Without Hiring Anyone.</p>
-        <p style="color: #f5a623; font-weight: bold;">For Aussie Tradies Who Want Their Time Back</p>
+        <h1>One System. <span>One Price.</span></h1>
+        <p>We build it. You use it. We keep improving it.</p>
+        <p class="sub">For Aussie Tradies Who Want Their Time Back</p>
     </section>
 
-    <!-- Pain Section -->
-    <section class="pain-section">
-        <h2>Sound Familiar?</h2>
-        <div class="pain-grid">
-            <div class="pain-card">
-                <h3>💸 Losing Jobs</h3>
-                <p>Can't track quotes? Clients go elsewhere. Simple as that.</p>
+    <section class="problem-section">
+        <h2>The Problem</h2>
+        <div class="problem-grid">
+            <div class="problem-card">
+                <h3>Time for Money</h3>
+                <p>You trade hours for dollars. Can't scale. Can't take time off.</p>
             </div>
-            <div class="pain-card">
-                <h3>📝 Admin拖垮你</h3>
-                <p>Spending 2+ hours/day on quotes and invoices. That's your life now.</p>
+            <div class="problem-card">
+                <h3>Admin Sucks</h3>
+                <p>2+ hours daily on quotes and invoices. That's not why you became a tradie.</p>
             </div>
-            <div class="pain-card">
-                <h3>💰 Money Gone</h3>
-                <p>Paying $50-150/month for software you only use 20% of.</p>
+            <div class="problem-card">
+                <h3>Software is Overkill</h3>
+                <p>$50-150/mo for features you never use. You just need the basics.</p>
             </div>
-            <div class="pain-card">
-                <h3>😴 No Time Off</h3>
-                <p>Trading time for money. Can't scale. Can't stop.</p>
+            <div class="problem-card">
+                <h3>Can't Find Good Help</h3>
+                <p>Can't afford admin staff. Can't do it all yourself forever.</p>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section class="offer-section">
-        <h2>Choose Your System</h2>
+    <section class="solution-section">
+        <h2>The System</h2>
         
-        <div class="pricing-grid">
+        <div class="main-offer">
+            <h3>Tradie Ops System</h3>
+            <p>The ONE system that handles your whole admin.</p>
             
-            <!-- Tier 1: Foundations -->
-            <div class="pricing-card">
-                <h3>🔧 Tradie Foundations</h3>
-                <p>Essential templates to get started</p>
-                <div class="price">$497<span>AUD</span></div>
-                
-                <ul class="features-list">
-                    <li>Custom Quote Template</li>
-                    <li>Custom Job Sheet</li>
-                    <li>Custom Invoice (ATO-compliant)</li>
-                    <li>Your logo & colours</li>
-                    <li>48hr delivery</li>
-                    <li>7-day support</li>
-                </ul>
-                
-                <a href="https://buy.stripe.com/YOUR_FOUNDATIONS_LINK" class="cta-btn">Get Started</a>
+            <div class="price">$97<span>/month</span></div>
+            
+            <ul class="perks">
+                <li>Custom Quote System</li>
+                <li>Job Sheet & Tracking</li>
+                <li>Invoicing (ATO-ready)</li>
+                <li>Materials Tracker</li>
+                <li>Client Database</li>
+                <li>We build it FOR YOU</li>
+                <li>We maintain it for YOU</li>
+                <li>Unlimited updates</li>
+                <li>Priority support</li>
+            </ul>
+            
+            <a href="#" class="cta-btn" id="stripeBtn">Start Subscription</a>
+            
+            <div class="guarantee">
+                <p><strong>Pay First, Then We Build</strong></p>
+                <p style="color:#666; margin-top:10px;">No deposits, no prototypes. You pay, we build. If it's not what you need within 30 days, full refund.</p>
             </div>
-            
-            <!-- Tier 2: Operations (Featured) -->
-            <div class="pricing-card featured">
-                <h3>⚡ Tradie Operations</h3>
-                <p>Complete system. We build it all.</p>
-                <div class="price">$1,997<span>AUD</span></div>
-                
-                <ul class="features-list">
-                    <li><strong>Everything in Foundations</strong></li>
-                    <li>Materials Tracker</li>
-                    <li>Weekly Schedule Template</li>
-                    <li>Job Follow-up System</li>
-                    <li>Done-for-you setup (we build it)</li>
-                    <li>1hr strategy call</li>
-                    <li>30-day priority support</li>
-                </ul>
-                
-                <a href="https://buy.stripe.com/YOUR_OPERATIONS_LINK" class="cta-btn">Get Started</a>
-            </div>
-            
-            <!-- Tier 3: Done-For-You -->
-            <div class="pricing-card">
-                <h3>👑 Tradie Done-For-You</h3>
-                <p>We run it for you. 12 months.</p>
-                <div class="price">$2,997<span>+ $197/mo</span></div>
-                
-                <ul class="features-list">
-                    <li><strong>Everything in Operations</strong></li>
-                    <li>12 months of updates</li>
-                    <li>Monthly 30-min consults</li>
-                    <li>Priority support (anytime)</li>
-                    <li>We manage the whole system</li>
-                    <li>First right of refusal on new features</li>
-                </ul>
-                
-                <a href="https://buy.stripe.com/YOUR_DONEFORYOU_LINK" class="cta-btn">Get Started</a>
-            </div>
-            
-        </div>
-        
-        <!-- Guarantee -->
-        <div class="guarantee">
-            <h3>🛡️ Our Guarantee</h3>
-            <p>We build FIRST. You pay AFTER.<br><br>
-            Doesn't save you 5 hours in week 1?<br>
-            <strong>Full refund. No questions asked.</strong></p>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
-        <p>Tradie Ops System © 2026</p>
-        <p style="color: #666; font-size: 0.9rem; margin-top: 10px;">
-            For Aussie Tradies | Melbourne Based
-        </p>
+        <p>Tradie Ops System</p>
+        <p style="margin-top:10px;">Melbourne, Australia</p>
     </footer>
+
+    <script>
+        // Add your Stripe subscription link here
+        const stripeLink = "YOUR_STRIPE_SUBSCRIPTION_LINK";
+        document.getElementById('stripeBtn').href = stripeLink;
+    </script>
 
 </body>
 </html>
